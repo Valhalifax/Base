@@ -27,4 +27,4 @@ jobs:
     - name: Test
       run: dotnet test BaseLibrary/ --no-build --verbosity normal
     - name: Pack
-      run: dotnet pack BaseLibrary/
+      run: dotnet pack BaseLibrary/BaseLibrary/BaseLibrary.csproj -c release
