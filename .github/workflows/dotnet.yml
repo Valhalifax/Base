@@ -29,4 +29,4 @@ jobs:
     - name: Pack
       run: dotnet pack BaseLibrary/BaseLibrary/BaseLibrary.csproj -c Release
     - name: Publish
-      run: dotnet nuget push "bin/Release/BaseLibrary.1.0.0.nupkg"  --api-key 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
+      run: dotnet nuget push "BaseLibrary/BaseLibrary/bin/Release/BaseLibrary.1.0.0.nupkg"  --api-key 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 -- source "Github"
