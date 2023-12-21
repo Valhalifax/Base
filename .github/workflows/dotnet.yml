@@ -23,8 +23,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore BaseLibrary/
     - name: Build
-      run: dotnet build BaseLibrary/ --no-restore -c release
+      run: dotnet build BaseLibrary/ --no-restore -c Release
     - name: Test
-      run: dotnet test BaseLibrary/ --no-build -c release --verbosity normal
+      run: dotnet test BaseLibrary/ --no-build -c Release --verbosity normal
     - name: Pack
-      run: dotnet pack BaseLibrary/BaseLibrary/BaseLibrary.csproj -c release
+      run: dotnet pack BaseLibrary/BaseLibrary/BaseLibrary.csproj -c Release
