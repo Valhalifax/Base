@@ -28,5 +28,7 @@ jobs:
       run: dotnet test BaseLibrary/ --no-build -c Release --verbosity normal
     - name: Pack
       run: dotnet pack BaseLibrary/BaseLibrary/BaseLibrary.csproj -c Release
+    - name: Add  source
+      run: dotnet nuget add source "github"
     - name: Publish
       run: dotnet nuget push "BaseLibrary/BaseLibrary/bin/Release/BaseLibrary.1.0.0.nupkg"  --api-key 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 --source "github"
