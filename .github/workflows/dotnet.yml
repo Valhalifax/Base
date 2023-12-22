@@ -32,6 +32,6 @@ jobs:
     - name: Pack
       run: dotnet pack BaseLibrary/BaseLibrary/BaseLibrary.csproj -c Release
     - name: Add  source
-      run: dotnet nuget add source github
+      run: dotnet nuget add source --username Valhalifax --password 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 --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Valhalifax/index.json"
     - name: Publish
       run: dotnet nuget push "BaseLibrary/BaseLibrary/bin/Release/BaseLibrary.1.0.0.nupkg"  --api-key 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 --source "github"
