@@ -3,9 +3,6 @@
 
 name: .NET
 
-permissions:
-     contents: write
-
 on:
   push:
     branches: [ "main" ]
@@ -16,6 +13,9 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+
+    permissions:
+     contents: write
 
     steps:
     - uses: actions/checkout@v3
@@ -31,7 +31,7 @@ jobs:
       run: dotnet test BaseLibrary/ --no-build -c Release --verbosity normal
     - name: Pack
       run: dotnet pack BaseLibrary/BaseLibrary/BaseLibrary.csproj -c Release
-    - name: Add  source
-      run: dotnet nuget add source --username Valhalifax --password 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 --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Valhalifax/index.json"
+    #- name: Add  source
+    #  run: dotnet nuget add source --username Valhalifax --password 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 --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Valhalifax/index.json"
     - name: Publish
       run: dotnet nuget push "BaseLibrary/BaseLibrary/bin/Release/BaseLibrary.1.0.0.nupkg"  --api-key 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 --source "github"
