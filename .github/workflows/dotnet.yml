@@ -31,4 +31,4 @@ jobs:
     - name: Add  source
       run: dotnet nuget add source github
     - name: Publish
-      run: dotnet nuget push "BaseLibrary/BaseLibrary/bin/Release/BaseLibrary.1.0.0.nupkg"  --api-key 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 --source "github"
+      run: dotnet nuget push "BaseLibrary/BaseLibrary/bin/Release/BaseLibrary.1.0.0.nupkg"  --api-key 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 --source "github"
